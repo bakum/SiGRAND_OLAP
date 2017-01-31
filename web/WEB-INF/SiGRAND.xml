@@ -1,0 +1,102 @@
+<Schema name="SiGRAND">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="&#1057;&#1090;&#1072;&#1090;&#1100;&#1080; &#1079;&#1072;&#1090;&#1088;&#1072;&#1090;">
+    <Hierarchy name="&#1043;&#1088;&#1091;&#1087;&#1087;&#1099; &#1079;&#1072;&#1090;&#1088;&#1072;&#1090;" visible="true" hasAll="true" allMemberName="&#1042;&#1089;&#1077; &#1079;&#1072;&#1090;&#1088;&#1072;&#1090;&#1099;" primaryKey="ID">
+      <Table name="VW_ZATRATY_OLAP" schema="DBA_DIVAS">
+      </Table>
+      <Level name="&#1057;&#1090;&#1072;&#1090;&#1100;&#1103; &#1079;&#1072;&#1090;&#1088;&#1072;&#1090;" visible="true" table="VW_ZATRATY_OLAP" column="ID" nameColumn="FULLNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="&#1060;&#1080;&#1083;&#1080;&#1072;&#1083;&#1099;">
+    <Hierarchy name="&#1043;&#1088;&#1091;&#1087;&#1087;&#1099; &#1092;&#1080;&#1083;&#1080;&#1072;&#1083;&#1086;&#1074;" visible="true" hasAll="true" allMemberName="&#1042;&#1089;&#1077; &#1092;&#1080;&#1083;&#1080;&#1072;&#1083;&#1099;" primaryKey="ID">
+      <Table name="DIVISIONS" schema="DBA_DIVAS">
+      </Table>
+      <Level name="&#1060;&#1080;&#1083;&#1080;&#1072;&#1083;" visible="true" table="DIVISIONS" column="ID" nameColumn="FULLNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="TimeDimension" visible="true" highCardinality="false" name="&#1042;&#1088;&#1077;&#1084;&#1103;">
+    <Hierarchy name="&#1050;&#1072;&#1083;&#1077;&#1085;&#1076;&#1072;&#1088;&#1100;" visible="true" hasAll="true" allMemberName="&#1050;&#1072;&#1083;&#1077;&#1085;&#1076;&#1072;&#1088;&#1100;" primaryKey="DAY_ID_NUM">
+      <Table name="VW_TIME_OLAP" schema="DBA_DIVAS">
+      </Table>
+      <Level name="&#1043;&#1086;&#1076;" visible="true" table="VW_TIME_OLAP" column="YEAR_END_DATE_NUM" nameColumn="YEAR_ID" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
+      </Level>
+      <Level name="&#1050;&#1074;&#1072;&#1088;&#1090;&#1072;&#1083;" visible="true" table="VW_TIME_OLAP" column="QUARTER_END_DATE_NUM" nameColumn="QUARTER_ID" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+      </Level>
+      <Level name="&#1052;&#1077;&#1089;&#1103;&#1094;" visible="true" table="VW_TIME_OLAP" column="MONTH_END_DATE_NUM" nameColumn="MONTH_LONG_DESC" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      </Level>
+      <Level name="&#1044;&#1077;&#1085;&#1100;" visible="true" table="VW_TIME_OLAP" column="DAY_ID_NUM" nameColumn="DAY_ID_STR" type="Numeric" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="&#1057;&#1091;&#1073;&#1082;&#1086;&#1085;&#1090;&#1086;">
+    <Hierarchy name="&#1043;&#1088;&#1091;&#1087;&#1087;&#1099; &#1089;&#1091;&#1073;&#1082;&#1086;&#1085;&#1090;&#1086;" visible="true" hasAll="true" allMemberName="&#1042;&#1089;&#1077; &#1072;&#1085;&#1072;&#1083;&#1080;&#1090;&#1080;&#1082;&#1080;" primaryKey="ID">
+      <Table name="VW_ZATRATY_OLAP" schema="DBA_DIVAS">
+      </Table>
+      <Level name="&#1040;&#1085;&#1072;&#1083;&#1080;&#1090;&#1080;&#1082;&#1072;" visible="true" table="VW_ZATRATY_OLAP" column="ID" nameColumn="FULLNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="&#1057;&#1095;&#1077;&#1090;&#1072;">
+    <Hierarchy name="&#1055;&#1083;&#1072;&#1085; &#1089;&#1095;&#1077;&#1090;&#1086;&#1074;" visible="true" hasAll="true" allMemberName="&#1042;&#1089;&#1077; &#1089;&#1095;&#1077;&#1090;&#1072;" primaryKey="CODE">
+      <Table name="PLAN_ACC" schema="DBA_DIVAS">
+      </Table>
+      <Level name="&#1057;&#1095;&#1077;&#1090;" visible="true" table="PLAN_ACC" column="CODE" nameColumn="FULLNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="&#1058;&#1080;&#1087;&#1099; &#1089;&#1095;&#1077;&#1090;&#1086;&#1074;">
+    <Hierarchy name="&#1058;&#1080;&#1087;&#1099;" visible="true" hasAll="true" allMemberName="&#1042;&#1089;&#1077; &#1090;&#1080;&#1087;&#1099;" primaryKey="ID">
+      <Table name="ENUM_ACCOUNT_TYPE" schema="DBA_DIVAS">
+      </Table>
+      <Level name="&#1058;&#1080;&#1087;" visible="true" table="ENUM_ACCOUNT_TYPE" column="ID" nameColumn="FULLNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="SiProfit" caption="&#1050;&#1091;&#1073; &#1087;&#1086; &#1087;&#1088;&#1080;&#1073;&#1099;&#1083;&#1100;&#1085;&#1086;&#1089;&#1090;&#1080;" visible="true" description="&#1055;&#1088;&#1080;&#1073;&#1099;&#1083;&#1100;&#1085;&#1086;&#1089;&#1090;&#1100;" cache="false" enabled="true">
+    <Table name="VW_DOHODNOST" schema="DBA_DIVAS" alias="&#1044;&#1086;&#1093;&#1086;&#1076;&#1085;&#1086;&#1089;&#1090;&#1100;">
+    </Table>
+    <DimensionUsage source="&#1057;&#1090;&#1072;&#1090;&#1100;&#1080; &#1079;&#1072;&#1090;&#1088;&#1072;&#1090;" name="&#1057;&#1090;&#1072;&#1090;&#1100;&#1080; &#1079;&#1072;&#1090;&#1088;&#1072;&#1090;" visible="true" foreignKey="ZATRATA_ID" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="&#1060;&#1080;&#1083;&#1080;&#1072;&#1083;&#1099;" name="&#1060;&#1080;&#1083;&#1080;&#1072;&#1083;&#1099;" visible="true" foreignKey="DIVISION_ID" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="&#1042;&#1088;&#1077;&#1084;&#1103;" name="&#1042;&#1088;&#1077;&#1084;&#1103;" visible="true" foreignKey="PERIOD_NUM" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="&#1055;&#1088;&#1080;&#1073;&#1099;&#1083;&#1100;" column="PRIB" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="&#1055;&#1088;&#1086;&#1076;&#1072;&#1078;&#1080;" column="PRIHOD" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="&#1057;&#1077;&#1073;&#1077;&#1089;&#1090;&#1086;&#1080;&#1084;&#1086;&#1089;&#1090;&#1100;" column="RASHOD" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="&#1047;&#1072;&#1090;&#1088;&#1072;&#1090;&#1099;" column="ZATR" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="&#1052;&#1072;&#1088;&#1078;&#1072;" column="MARGA" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="&#1042;&#1099;&#1087;&#1083;&#1072;&#1095;&#1077;&#1085;&#1086;" column="PROC" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="&#1054;&#1089;&#1090;&#1072;&#1090;&#1086;&#1082;" column="OST" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+  <Cube name="SiOSW" caption="&#1054;&#1073;&#1086;&#1088;&#1086;&#1090;&#1085;&#1086;-&#1089;&#1072;&#1083;&#1100;&#1076;&#1086;&#1074;&#1072;&#1103; &#1074;&#1077;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1100;" visible="true" description="&#1054;&#1057;&#1042;" cache="false" enabled="true">
+    <Table name="VW_OSV_OLAP" schema="DBA_DIVAS" alias="&#1054;&#1057;&#1042;">
+    </Table>
+    <DimensionUsage source="&#1057;&#1091;&#1073;&#1082;&#1086;&#1085;&#1090;&#1086;" name="&#1040;&#1085;&#1072;&#1083;&#1080;&#1090;&#1080;&#1082;&#1080;01" visible="true" foreignKey="SUBCONTO1" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="&#1057;&#1091;&#1073;&#1082;&#1086;&#1085;&#1090;&#1086;" name="&#1040;&#1085;&#1072;&#1083;&#1080;&#1090;&#1080;&#1082;&#1080;02" visible="true" foreignKey="SUBCONTO2" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="&#1057;&#1095;&#1077;&#1090;&#1072;" name="&#1057;&#1095;&#1077;&#1090;&#1072;" visible="true" foreignKey="CODE" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="&#1058;&#1080;&#1087;&#1099; &#1089;&#1095;&#1077;&#1090;&#1086;&#1074;" name="&#1058;&#1080;&#1087; &#1089;&#1095;&#1077;&#1090;&#1072;" visible="true" foreignKey="ACC_TYPE" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="&#1060;&#1080;&#1083;&#1080;&#1072;&#1083;&#1099;" name="&#1060;&#1080;&#1083;&#1080;&#1072;&#1083;&#1099;" visible="true" foreignKey="DIVISION_ID" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="&#1042;&#1088;&#1077;&#1084;&#1103;" name="&#1042;&#1088;&#1077;&#1084;&#1103;" visible="true" foreignKey="PERIOD_NUM">
+    </DimensionUsage>
+    <Measure name="&#1044;&#1077;&#1073;&#1077;&#1090;" column="SUMMA_DEBET" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="&#1050;&#1088;&#1077;&#1076;&#1080;&#1090;" column="SUMMA_KREDIT" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="&#1054;&#1089;&#1090;&#1072;&#1090;&#1086;&#1082;" column="OBOROT" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
